@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Contact SportElite for premium sports equipment, coaching, and elite performance services." />
+    <title>Contact Us | SportElite – Premium Sports Equipment & Coaching</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+  <script src="js/theme.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+
+<body class="contact-page">
+
+    <!-- ════ Header (Shared) ════ -->
+    <header id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="SportElite Logo" />
+                <span class="logo-text">Sport<span>Elite</span></span>
+            </a>
+            <nav class="main-nav" aria-label="Main navigation">
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link">Home <span class="arrow">▾</span></a>
+                    <div class="dropdown">
+                        <a href="index.html">Home 1</a>
+                        <a href="index2.html">Home 2</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="about.html" class="nav-link">About</a></div>
+                <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
+                <div class="nav-item"><a href="contact.html" class="nav-link active">Contact</a></div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Dashboard <span class="arrow">▾</span></a>
+                    <div class="dropdown">
+                        <a href="user-dashboard.html">User Dashboard</a>
+                        <a href="admin-dashboard.html">Admin Dashboard</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="login-btn">Login</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark/Light Theme" title="Toggle Dark/Light Theme"><svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg><svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg></button><button class="globe-btn" id="globe-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <ellipse cx="12" cy="12" rx="4" ry="10" />
+                        <line x1="2" y1="9" x2="22" y2="9" />
+                        <line x1="2" y1="15" x2="22" y2="15" />
+                    </svg>
+                    <span class="dir-label" id="dir-label">LTR</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+        <div class="mobile-nav-item">
+            <span class="mobile-nav-link" data-toggle="#mob-home-dd">Home <span class="arrow">▾</span></span>
+            <div class="mobile-dropdown" id="mob-home-dd">
+                <a href="index.html">Home 1</a>
+                <a href="index2.html">Home 2</a>
+            </div>
+        </div>
+        <div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link">About</a></div>
+        <div class="mobile-nav-item"><a href="services.html" class="mobile-nav-link">Services</a></div>
+        <div class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link active">Contact</a></div>
+        <div class="mobile-nav-item">
+            <span class="mobile-nav-link" data-toggle="#mob-dash-dd">Dashboard <span class="arrow">▾</span></span>
+            <div class="mobile-dropdown" id="mob-dash-dd">
+                <a href="user-dashboard.html">User Dashboard</a>
+                <a href="admin-dashboard.html">Admin Dashboard</a>
+            </div>
+        </div>
+        <div class="mobile-nav-item" style="border-bottom: none;">
+            <a href="login.html" class="mobile-login-btn">Login</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 1. Contact Hero -->
+        <section class="contact-hero" id="hero">
+            <div class="kinetic-grid-bg"></div>
+            <div class="container hero-content">
+                <div class="reveal from-bottom">
+                    <span class="section-tag">Direct Line</span>
+                    <h1 class="hero-title-main">Let's <span>Connect</span></h1>
+                    <p class="hero-lead">The elite don’t wait. Secure your performance upgrade today.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Global Headquarters -->
+        <section class="contact-hq" id="hq">
+            <div class="hq-map-bg">
+                <img src="images/world-map.jpg" alt="World Map" class="hq-img" />
+            </div>
+            <div class="container hq-overlay-container">
+                <div class="hq-card reveal from-left">
+                    <h2 class="section-title">Global <span>Command</span> Center</h2>
+                    <div class="hq-info">
+                        <div class="hq-item">
+                            <span class="label">Primary HQ</span>
+                            <p>123 Champion Avenue, Sports City, CA 90210</p>
+                        </div>
+                        <div class="hq-item">
+                            <span class="label">Operating Hours</span>
+                            <p>24/7 Elite Support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Department Grid -->
+        <section class="contact-departments" id="departments">
+            <div class="container">
+                <div class="dept-grid">
+                    <div class="dept-box reveal" style="background-image: url('images/gallery.png');">
+                        <div class="dept-content">
+                            <h3>Performance <span>Sales</span></h3>
+                            <p>sales@sportelite.com</p>
+                        </div>
+                    </div>
+                    <div class="dept-box reveal reveal-delay-1" style="background-image: url('images/team.png');">
+                        <div class="dept-content">
+                            <h3>Elite <span>Coaching</span></h3>
+                            <p>coaching@sportelite.com</p>
+                        </div>
+                    </div>
+                    <div class="dept-box reveal reveal-delay-2"
+                        style="background-image: url('images/hero-banner.png');">
+                        <div class="dept-content">
+                            <h3>Tech <span>Support</span></h3>
+                            <p>tech@sportelite.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Elite Operations Command -->
+        <section class="contact-ops-command" id="concierge">
+            <div class="ops-grid">
+                <div class="ops-dashboard reveal from-left">
+                    <div class="dash-header">
+                        <span class="status-dot"></span>
+                        <h3>SYSTEMS ONLINE</h3>
+                    </div>
+                    <div class="metrics-container">
+                        <div class="metric-row">
+                            <span>RESPONSE TIME</span>
+                            <div class="progress-bar">
+                                <div class="bar-inner" style="width: 98%;"></div>
+                            </div>
+                            <span class="val">0.4s</span>
+                        </div>
+                        <div class="metric-row">
+                            <span>GLOBAL REACH</span>
+                            <div class="progress-bar">
+                                <div class="bar-inner" style="width: 85%;"></div>
+                            </div>
+                            <span class="val">85%</span>
+                        </div>
+                        <div class="metric-row">
+                            <span>ELITE CAPACITY</span>
+                            <div class="progress-bar">
+                                <div class="bar-inner" style="width: 92%;"></div>
+                            </div>
+                            <span class="val">92%</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ops-content reveal from-right">
+                    <h2 class="section-title">Operations <span>Command</span></h2>
+                    <p>Our centralized hub manages elite protocols and logistics with surgical precision. Access our
+                        specialized tiers for immediate deployment.</p>
+                    <div class="ops-portals">
+                        <div class="portal-card">
+                            <span class="p-icon"><i class="fa-solid fa-dna"></i></span>
+                            <h4>Bio-Sync</h4>
+                            <p>Direct link to performance data analytics.</p>
+                        </div>
+                        <div class="portal-card">
+                            <span class="p-icon"><i class="fa-solid fa-box-open"></i></span>
+                            <h4>Logistics</h4>
+                            <p>Real-time equipment tracking and delivery.</p>
+                        </div>
+                        <div class="portal-card gold-border">
+                            <span class="p-icon"><i class="fa-solid fa-shield-halved"></i></span>
+                            <h4>Protocol</h4>
+                            <p>Priority access for professional organizations.</p>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-primary-large magnetic">Initiate Command</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Global Performance Network -->
+        <section class="contact-global-network" id="network">
+            <div class="container">
+                <div class="network-grid">
+                    <div class="network-visual reveal from-left">
+                        <div class="connectivity-hub">
+                            <div class="hub-ring"></div>
+                            <div class="hub-ring delay-1"></div>
+                            <div class="hub-ring delay-2"></div>
+                            <div class="hub-core">
+                                <span class="core-pulse"></span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    style="width: 32px; height: 32px;">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path
+                                        d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <!-- Connection Nodes -->
+                            <div class="node n1"></div>
+                            <div class="node n2"></div>
+                            <div class="node n3"></div>
+                            <div class="node n4"></div>
+                        </div>
+                    </div>
+                    <div class="network-content reveal from-right">
+                        <span class="section-tag">Unlimited Scalability</span>
+                        <h2 class="section-title">Global <span>Performance</span> Network</h2>
+                        <p>Our decentralized infrastructure ensures peak performance for elite athletes anywhere on the
+                            globe. Seamless connectivity, zero latency.</p>
+
+                        <div class="network-cards-container">
+                            <div class="network-card">
+                                <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" style="width: 28px; height: 28px;">
+                                        <rect x="4" y="4" width="16" height="16" rx="2" ry="2"></rect>
+                                        <rect x="9" y="9" width="6" height="6"></rect>
+                                        <line x1="9" y1="1" x2="9" y2="4"></line>
+                                        <line x1="15" y1="1" x2="15" y2="4"></line>
+                                        <line x1="9" y1="20" x2="9" y2="23"></line>
+                                        <line x1="15" y1="20" x2="15" y2="23"></line>
+                                        <line x1="20" y1="9" x2="23" y2="9"></line>
+                                        <line x1="20" y1="15" x2="23" y2="15"></line>
+                                        <line x1="1" y1="9" x2="4" y2="9"></line>
+                                        <line x1="1" y1="15" x2="4" y2="15"></line>
+                                    </svg></div>
+                                <div class="card-info">
+                                    <span class="val">32</span>
+                                    <span class="lab">Global Hubs</span>
+                                </div>
+                            </div>
+                            <div class="network-card">
+                                <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" style="width: 28px; height: 28px;">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                    </svg></div>
+                                <div class="card-info">
+                                    <span class="val">24/7</span>
+                                    <span class="lab">Ops Monitoring</span>
+                                </div>
+                            </div>
+                            <div class="network-card">
+                                <div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" style="width: 28px; height: 28px;">
+                                        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
+                                    </svg></div>
+                                <div class="card-info">
+                                    <span class="val">&lt; 1ms</span>
+                                    <span class="lab">Sync Latency</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 40px;">
+                            <a href="#" class="btn-outline-gold">View Network Stats</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Support Lab (Form) -->
+        <section class="contact-support-lab" id="support">
+            <div class="lab-bg-texture"></div>
+            <div class="container">
+                <div class="lab-flex-grid">
+                    <div class="lab-visual reveal from-left">
+                        <div class="lab-stats-box">
+                            <span class="stat-num">24/7</span>
+                            <span class="stat-label">Support Monitoring</span>
+                        </div>
+                    </div>
+                    <div class="lab-form-container reveal from-right">
+                        <h2 class="section-title">Initiate <span>Contact</span></h2>
+                        <div id="contact-form" class="elite-form">
+                            <div class="form-row">
+                                <input type="text" placeholder="Full Name" required />
+                                <input type="email" placeholder="Elite Email" required />
+                            </div>
+                            <textarea placeholder="Your Performance Inquiry" rows="5" required></textarea>
+                            <button type="submit" class="btn-gold">Launch Request</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Social Pulse -->
+        <section class="contact-social-pulse" id="social">
+            <div class="container-full">
+                <div class="pulse-grid">
+                    <div class="pulse-item reveal" style="background-image: url('images/s3.webp');">
+                        <div class="pulse-overlay"><span>@SPORTELITE</span></div>
+                    </div>
+                    <div class="pulse-item reveal reveal-delay-1" style="background-image: url('images/s4.jpg');">
+                        <div class="pulse-overlay"><span>JOIN THE ELITE</span></div>
+                    </div>
+                    <div class="pulse-item reveal reveal-delay-2" style="background-image: url('images/s5.avif');">
+                        <div class="pulse-overlay"><span>LIVE THE GAME</span></div>
+                    </div>
+                    <div class="pulse-item reveal reveal-delay-3" style="background-image: url('images/s6.jpg');">
+                        <div class="pulse-overlay"><span>BEYOND LIMITS</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Press Room -->
+        <section class="contact-press" id="press">
+            <div class="press-visual">
+                <img src="images/gallery.png" alt="Press Room" />
+            </div>
+            <div class="container">
+                <div class="press-content reveal from-bottom">
+                    <h2 class="section-title">Press & <span>Media</span></h2>
+                    <p>Access high-resolution assets, official press releases, and brand guidelines for the global
+                        sporting press. Our media hub is designed for rapid information retrieval.</p>
+                    <div class="press-stats">
+                        <div class="p-stat">
+                            <span class="p-num">2M+</span>
+                            <span class="p-lab">Monthly Reach</span>
+                        </div>
+                        <div class="p-stat">
+                            <span class="p-num">150+</span>
+                            <span class="p-lab">Global Outlets</span>
+                        </div>
+                    </div>
+                    <div class="press-actions">
+                        <a href="#" class="btn-outline-gold">Download Media Kit</a>
+                        <a href="#" class="btn-outline-gold">Press Inquiries</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Private Viewings -->
+
+        <!-- 9. FAQ Kinetic -->
+        <section class="contact-faq" id="faq">
+            <div class="faq-bg-pattern"></div>
+            <div class="container">
+                <div class="faq-layout">
+                    <div class="faq-visual reveal from-right">
+                        <div class="faq-icon-sphere">
+                            <div class="sphere-inner">?</div>
+                        </div>
+                    </div>
+                    <div class="faq-content reveal from-left">
+                        <h2 class="section-title">Elite <span>Intelligence</span></h2>
+                        <div class="faq-item active">
+                            <div class="faq-q">What is the response time for elite inquiries?</div>
+                            <div class="faq-a">Our high-priority protocols ensure a response within 4 hours.</div>
+                        </div>
+                        <div class="faq-item">
+                            <div class="faq-q">Do you offer global site visit coordination?</div>
+                            <div class="faq-a">Yes, our concierge team handles all travel and logistics for
+                                international clients.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Connection CTA -->
+        <section class="contact-cta" id="final-cta">
+            <div class="cta-bg-kinetic" style="background-image: url('images/hero-banner.png');"></div>
+            <div class="container cta-flex">
+                <div class="reveal from-bottom">
+                    <h2 class="cta-title">Ready for <span>Legendary</span>?</h2>
+                    <p>The first step to greatness is the easiest one to take.</p>
+                    <a href="#support" class="btn-primary-large">Initiate Now</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ════ Footer (Shared) ════ -->
+    <footer id="footer" class="reveal">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.png" alt="SportElite" />
+                        <span class="logo-text">Sport<span>Elite</span></span>
+                    </a>
+                    <p>Your ultimate destination for premium sports equipment. Trusted by champions across the globe
+                        since 2009.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.11 1 12 1 12s0 3.89.46 5.58a1.9 1.9 0 0 0 1.34 1.34c1.7.48 8.6.48 8.6.48s6.88 0 8.6-.48a1.9 1.9 0 0 0 1.34-1.34c.46-1.69.46-5.58.46-5.58s0-3.89-.46-5.58z" />
+                                <polygon points="9.54 15.54 15.19 12 9.54 8.46 9.54 15.54" />
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Shop</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Football</a></li>
+                        <li><a href="#">Basketball</a></li>
+                        <li><a href="#">Running</a></li>
+                        <li><a href="#">Tennis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item"><span class="icon"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg></span><span>123 Champion Avenue, Sports City, CA 90210</span></div>
+                    <div class="footer-contact-item"><span class="icon"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg></span><span>+1 (800) 555-SPORT</span></div>
+                    <div class="footer-contact-item"><span class="icon"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg></span><span>hello@sportelite.com</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">© 2025 <span>SportElite</span>. All rights reserved. Designed with <span
+                        style="color:var(--gold); display:inline-flex; align-items:center; vertical-align:middle;"><svg
+                            viewBox="0 0 24 24" fill="currentColor" style="width:14px;height:14px;">
+                            <path
+                                d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                        </svg></span> for athletes.</div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;">
+            <polyline points="18 15 12 9 6 15" />
+        </svg></button>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

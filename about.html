@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Learn more about SportElite – Our mission, our story, and the team driving sports excellence." />
+    <title>About Us | SportElite – Premium Sports Equipment</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="stylesheet" href="css/style.css" />
+  <script src="js/theme.js"></script>
+</head>
+
+<body class="about-page">
+
+    <!-- ════ Header (Shared) ════ -->
+    <header id="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="images/logo.png" alt="SportElite Logo" />
+                <span class="logo-text">Sport<span>Elite</span></span>
+            </a>
+            <nav class="main-nav" aria-label="Main navigation">
+                <div class="nav-item">
+                    <a href="index.html" class="nav-link">Home <span class="arrow">▾</span></a>
+                    <div class="dropdown">
+                        <a href="index.html">Home 1</a>
+                        <a href="index2.html">Home 2</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="about.html" class="nav-link active">About</a></div>
+                <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
+                <div class="nav-item"><a href="contact.html" class="nav-link">Contact</a></div>
+                <div class="nav-item">
+                    <a href="#" class="nav-link">Dashboard <span class="arrow">▾</span></a>
+                    <div class="dropdown">
+                        <a href="user-dashboard.html">User Dashboard</a>
+                        <a href="admin-dashboard.html">Admin Dashboard</a>
+                    </div>
+                </div>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="login-btn">Login</a>
+                <button class="theme-toggle" id="theme-toggle" aria-label="Toggle Dark/Light Theme" title="Toggle Dark/Light Theme"><svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg><svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg></button><button class="globe-btn" id="globe-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10" />
+                        <ellipse cx="12" cy="12" rx="4" ry="10" />
+                        <line x1="2" y1="9" x2="22" y2="9" />
+                        <line x1="2" y1="15" x2="22" y2="15" />
+                    </svg>
+                    <span class="dir-label" id="dir-label">LTR</span>
+                </button>
+                <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-overlay" id="mobile-overlay"></div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+        <div class="mobile-nav-item">
+            <span class="mobile-nav-link" data-toggle="#mob-home-dd">Home <span class="arrow">▾</span></span>
+            <div class="mobile-dropdown" id="mob-home-dd">
+                <a href="index.html">Home 1</a>
+                <a href="index2.html">Home 2</a>
+            </div>
+        </div>
+        <div class="mobile-nav-item"><a href="about.html" class="mobile-nav-link active">About</a></div>
+        <div class="mobile-nav-item"><a href="services.html" class="mobile-nav-link">Services</a></div>
+        <div class="mobile-nav-item"><a href="contact.html" class="mobile-nav-link">Contact</a></div>
+        <div class="mobile-nav-item">
+            <span class="mobile-nav-link" data-toggle="#mob-dash-dd">Dashboard <span class="arrow">▾</span></span>
+            <div class="mobile-dropdown" id="mob-dash-dd">
+                <a href="user-dashboard.html">User Dashboard</a>
+                <a href="admin-dashboard.html">Admin Dashboard</a>
+            </div>
+        </div>
+        <div class="mobile-nav-item" style="border-bottom: none;">
+            <a href="login.html" class="mobile-login-btn">Login</a>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 1. Hero Section -->
+        <section class="about-hero" id="hero">
+            <div class="hero-bg-animated"></div>
+            <div class="container hero-content">
+                <div class="reveal from-bottom">
+                    <span class="hero-eyebrow">OUR LEGACY</span>
+                    <h1 class="hero-title-split">
+                        <span class="line">DEFINING THE</span>
+                        <span class="line gold">FUTURE OF SPORT</span>
+                    </h1>
+                    <p class="hero-subtitle">We don't just sell equipment; we equip legends. Since 2009, SportElite has
+                        been at the forefront of athletic innovation, bridging the gap between human potential and
+                        technological perfection with every product we engineer.</p>
+                    <div class="hero-tactical-grid">
+                        <div class="t-item"><span>Est. 2009</span></div>
+                        <div class="t-item"><span>Pro-Grade</span></div>
+                        <div class="t-item"><span>Elite Only</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Mission Section -->
+        <section class="about-mission reveal" id="mission">
+            <div class="container">
+                <div class="mission-panels">
+                    <div class="mission-panel reveal from-left">
+                        <div class="panel-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <circle cx="12" cy="12" r="6" />
+                                <circle cx="12" cy="12" r="2" />
+                            </svg></div>
+                        <h3>Our Mission</h3>
+                        <p>To empower every athlete with world-class equipment that shatters limits and elevates
+                            performance to unprecedented levels.</p>
+                    </div>
+                    <div class="mission-panel reveal from-right">
+                        <div class="panel-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" />
+                                <circle cx="12" cy="12" r="3" />
+                            </svg></div>
+                        <h3>Our Vision</h3>
+                        <p>To be the global benchmark for sporting excellence, where innovation meets the raw passion of
+                            every champion.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Story Section (Timeline) -->
+        <section class="about-story" id="story">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Our Journey</span>
+                    <h2 class="section-title">A Decade of <span>Dominance</span></h2>
+                    <div class="gold-line"></div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-bar"></div>
+                    <div class="timeline-item reveal from-left">
+                        <div class="time-year">2009</div>
+                        <div class="time-content">
+                            <h4>The Beginning</h4>
+                            <p>Founded in a small garage with a big dream to redefine sports retail.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal from-right">
+                        <div class="time-year">2014</div>
+                        <div class="time-content">
+                            <h4>Global Expansion</h4>
+                            <p>Opened our first international distribution hub, reaching athletes in 50 countries.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal from-left">
+                        <div class="time-year">2020</div>
+                        <div class="time-content">
+                            <h4>Innovation Peak</h4>
+                            <p>Launched our Elite Lab series, setting new standards in durability and tech.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal from-right">
+                        <div class="time-year">2025</div>
+                        <div class="time-content">
+                            <h4>The Future</h4>
+                            <p>Leading the way in sustainable performance gear for the next generation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Values Section -->
+        <section class="about-values" id="values">
+            <div class="container">
+                <div class="values-grid">
+                    <div class="value-card reveal" data-tilt>
+                        <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 3h12l4 6-10 12L2 9z" />
+                                <path d="M11 3L8 9l3 12 3-12-3-6z" />
+                                <path d="M2 9h20" />
+                            </svg></div>
+                        <h3>Uncompromising Quality</h3>
+                        <p>We source only the finest materials, ensuring every product withstands the rigors of elite
+                            competition.</p>
+                    </div>
+                    <div class="value-card reveal reveal-delay-1" data-tilt>
+                        <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                            </svg></div>
+                        <h3>Relentless Innovation</h3>
+                        <p>Our labs never sleep. We're constantly pushing the boundaries of what's possible in sports
+                            tech.</p>
+                    </div>
+                    <div class="value-card reveal reveal-delay-2" data-tilt>
+                        <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                <circle cx="9" cy="7" r="4" />
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                            </svg></div>
+                        <h3>Athlete First</h3>
+                        <p>Designing with the athlete's needs at the core. Your performance is our ultimate priority.
+                        </p>
+                    </div>
+                    <div class="value-card reveal reveal-delay-3" data-tilt>
+                        <div class="value-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="2" y1="12" x2="22" y2="12" />
+                                <path
+                                    d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                            </svg></div>
+                        <h3>Sustainability</h3>
+                        <p>Protecting the planet we play on. We're committed to eco-friendly manufacturing processes.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Leadership Section -->
+        <section class="about-leadership" id="leadership">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">The Team</span>
+                    <h2 class="section-title">The Minds Behind <span>Elite</span></h2>
+                    <div class="gold-line"></div>
+                </div>
+                <div class="leader-grid">
+                    <div class="leader-card reveal">
+                        <div class="leader-img">
+                            <img src="images/m1.avif" alt="CEO" />
+                            <div class="leader-hover">
+                                <p>"Excellence is not an act, but a habit."</p>
+                            </div>
+                        </div>
+                        <div class="leader-info">
+                            <h4>Alex Sterling</h4>
+                            <p>Founder & CEO</p>
+                        </div>
+                    </div>
+                    <div class="leader-card reveal reveal-delay-1">
+                        <div class="leader-img">
+                            <img src="images/f1.avif" alt="CTO" />
+                            <div class="leader-hover">
+                                <p>"Tech is the bridge to victory."</p>
+                            </div>
+                        </div>
+                        <div class="leader-info">
+                            <h4>Sarah Chen</h4>
+                            <p>Chief Innovation Officer</p>
+                        </div>
+                    </div>
+                    <div class="leader-card reveal reveal-delay-2">
+                        <div class="leader-img">
+                            <img src="images/m2.avif" alt="COO" />
+                            <div class="leader-hover">
+                                <p>"Precision is the soul of performance."</p>
+                            </div>
+                        </div>
+                        <div class="leader-info">
+                            <h4>Marcus Thorne</h4>
+                            <p>Head of Operations</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Global Impact Section -->
+        <section class="about-impact" id="impact">
+            <div class="container">
+                <div class="impact-grid">
+                    <div class="impact-stats reveal">
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="150" data-suffix="+">0</span>
+                            <p>Countries Served</p>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="1200000" data-suffix="+">0</span>
+                            <p>Athletes Equipped</p>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="200" data-suffix="+">0</span>
+                            <p>Global Stores</p>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-target="50" data-suffix="M+">0</span>
+                            <p>Items Delivered</p>
+                        </div>
+                    </div>
+                    <div class="impact-content reveal from-right">
+                        <h3>Our Global Footprint</h3>
+                        <p>From local courts to Olympic stadiums, SportElite is a trusted name in every corner of the
+                            world. Our distribution network ensures that high-quality gear is accessible to everyone,
+                            everywhere.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Quality Section (Scanline) -->
+        <section class="about-lab" id="lab">
+            <div class="lab-scanner-container">
+                <div class="lab-img-wrapper reveal">
+                    <img src="images/hero-banner.png" alt="Elite Lab" />
+                    <div class="scanner-bar"></div>
+                </div>
+                <div class="lab-overlay-content container">
+                    <div class="reveal from-bottom">
+                        <span class="section-tag">Elite Lab</span>
+                        <h2 class="section-title">Tested Under <span>Extreme</span> Pressure</h2>
+                        <p>Every stitch, every seam, and every surface is scrutinized under laboratory conditions to
+                            ensure it meets our "Elite Standard."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Innovation Features Section -->
+        <section class="about-features" id="innovation">
+            <div class="container">
+                <div class="features-reveal-grid">
+                    <div class="feat-box reveal">
+                        <div class="feat-glow"></div>
+                        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
+                            </svg></div>
+                        <h4>Graphene Tech</h4>
+                        <p>Ultra-lightweight and indestructible materials for professional-grade durability.</p>
+                    </div>
+                    <div class="feat-box reveal reveal-delay-1">
+                        <div class="feat-glow"></div>
+                        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="12 2 2 7 12 12 22 7 12 2" />
+                                <polyline points="2 17 12 22 22 17" />
+                                <polyline points="2 12 12 17 22 12" />
+                            </svg></div>
+                        <h4>Bio-Aero Design</h4>
+                        <p>Aerodynamic patterns modeled after nature for maximum speed and efficiency.</p>
+                    </div>
+                    <div class="feat-box reveal reveal-delay-2">
+                        <div class="feat-glow"></div>
+                        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                            </svg></div>
+                        <h4>Kinetic Energy</h4>
+                        <p>Smart shoe technology that absorbs impact and converts it into explosive energy.</p>
+                    </div>
+                    <div class="feat-box reveal reveal-delay-3">
+                        <div class="feat-glow"></div>
+                        <div class="feat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+                                <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+                                <line x1="12" y1="22.08" x2="12" y2="12" />
+                            </svg></div>
+                        <h4>Elite Weave</h4>
+                        <p>Proprietary fabric tech that offers 360-degree breathability and support.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Partners Section (Marquee) -->
+        <section class="about-partners" id="partners">
+            <div class="partners-marquee-container">
+                <div class="marquee-track">
+                    <div class="partner-logo">NIKE</div>
+                    <div class="partner-logo">ADIDAS</div>
+                    <div class="partner-logo">PUMA</div>
+                    <div class="partner-logo">UNDER ARMOUR</div>
+                    <div class="partner-logo">REEBOK</div>
+                    <div class="partner-logo">ASICS</div>
+                    <div class="partner-logo">MIZUNO</div>
+                    <div class="partner-logo">WILSON</div>
+                    <!-- Repeat for smooth loop -->
+                    <div class="partner-logo">NIKE</div>
+                    <div class="partner-logo">ADIDAS</div>
+                    <div class="partner-logo">PUMA</div>
+                    <div class="partner-logo">UNDER ARMOUR</div>
+                    <div class="partner-logo">REEBOK</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. Sustainability Section -->
+        <section class="about-eco" id="sustainability">
+            <div class="eco-parallax-bg"></div>
+            <div class="container">
+                <div class="eco-floating-nodes reveal">
+                    <div class="eco-node" style="top:10%;left:20%;">Recycled Ocean Plastic</div>
+                    <div class="eco-node gold" style="top:40%;left:70%;">Solar Powered Factories</div>
+                    <div class="eco-node" style="top:70%;left:30%;">Zero Waste Policy</div>
+                    <div class="eco-node gold" style="top:20%;left:80%;">Sustainable Sourcing</div>
+                </div>
+                <div class="eco-content reveal from-bottom">
+                    <h2 class="section-title">Play Forever, <span>Protect Always</span></h2>
+                    <p>We believe in the longevity of sports and our planet. Our Green Shield initiative aims for zero
+                        carbon footprint by 2030.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Awards Section (Carousel/Flip) -->
+        <section class="about-awards" id="awards">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Excellence</span>
+                    <h2 class="section-title">Milestones of <span>Success</span></h2>
+                    <div class="gold-line"></div>
+                </div>
+                <div class="awards-carousel">
+                    <div class="award-card reveal" data-face="front">
+                        <div class="award-front">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6" />
+                                <path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18" />
+                                <path d="M4 22h16" />
+                                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22" />
+                                <path d="M14 14.66V17c0 .55.45.98.97 1.21C16.15 18.75 17 20.24 17 22" />
+                                <path d="M18 2H6v7a6 6 0 0 0 12 0V2z" />
+                            </svg>
+                            Best Retailer 2024
+                        </div>
+                        <div class="award-back">Voted #1 in Customer Satisfaction across Europe.</div>
+                    </div>
+                    <div class="award-card reveal reveal-delay-1" data-face="front">
+                        <div class="award-front">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="8" r="7" />
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88" />
+                            </svg>
+                            Innovation Award
+                        </div>
+                        <div class="award-back">Recognized for Elite Lab Series tech developments.</div>
+                    </div>
+                    <div class="award-card reveal reveal-delay-2" data-face="front">
+                        <div class="award-front">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M7 11V7l5-5 5 5v4" />
+                                <path d="M21 21v-4a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v4" />
+                                <path d="M7 21a2 2 0 0 1-2-2h14a2 2 0 0 1-2 2H7z" />
+                            </svg>
+                            Eco Leader 2025
+                        </div>
+                        <div class="award-back">Awarded for our commitment to sustainable sports.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. CTA Section -->
+        <section class="about-cta" id="cta">
+            <div class="cta-gradient-bg"></div>
+            <div class="container">
+                <div class="reveal from-bottom">
+                    <h2>PART OF THE ELITE?</h2>
+                    <p>Join our community and get access to the pros.</p>
+                    <div style="margin-top:40px;">
+                        <a href="index.html#products" class="btn-primary magnetic">Get Equipped</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ════ Footer (Shared) ════ -->
+    <footer id="footer" class="reveal">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.png" alt="SportElite" />
+                        <span class="logo-text">Sport<span>Elite</span></span>
+                    </a>
+                    <p>Your ultimate destination for premium sports equipment. Trusted by champions across the globe
+                        since 2009.</p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-link" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="Twitter"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.42a2.78 2.78 0 0 0-1.94 2C1 8.11 1 12 1 12s0 3.89.46 5.58a1.9 1.9 0 0 0 1.34 1.34c1.7.48 8.6.48 8.6.48s6.88 0 8.6-.48a1.9 1.9 0 0 0 1.34-1.34c.46-1.69.46-5.58.46-5.58s0-3.89-.46-5.58z" />
+                                <polygon points="9.54 15.54 15.19 12 9.54 8.46 9.54 15.54" />
+                            </svg></a>
+                        <a href="#" class="social-link" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                                <rect x="2" y="9" width="4" height="12" />
+                                <circle cx="4" cy="4" r="2" />
+                            </svg></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="#">Shop</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Football</a></li>
+                        <li><a href="#">Basketball</a></li>
+                        <li><a href="#">Running</a></li>
+                        <li><a href="#">Tennis</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <div class="footer-contact-item"><span class="icon"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                <circle cx="12" cy="10" r="3" />
+                            </svg></span><span>123 Champion Avenue, Sports City, CA 90210</span></div>
+                    <div class="footer-contact-item"><span class="icon"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path
+                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                            </svg></span><span>+1 (800) 555-SPORT</span></div>
+                    <div class="footer-contact-item"><span class="icon"><svg viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                                <polyline points="22,6 12,13 2,6" />
+                            </svg></span><span>hello@sportelite.com</span></div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-copy">© 2025 <span>SportElite</span>. All rights reserved. Designed with ❤️ for
+                    athletes.</div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="back-to-top" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:20px;height:20px;">
+            <polyline points="18 15 12 9 6 15" />
+        </svg></button>
+
+    <script src="js/main.js"></script>
+    <script>
+        /* Magnetic button effect */
+        document.querySelectorAll('.magnetic').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+                btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = '';
+            });
+        });
+
+        /* Award card flip toggle on scroll/reveal */
+        const awards = document.querySelectorAll('.award-card');
+        awards.forEach(card => {
+            card.addEventListener('mouseenter', () => card.classList.add('flipped'));
+            card.addEventListener('mouseleave', () => card.classList.remove('flipped'));
+        });
+    </script>
+</body>
+
+</html>

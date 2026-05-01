@@ -1,0 +1,723 @@
+:root {
+    /* Inherits from style.css but keeps dashboard specifics */
+    --sidebar-w: 260px;
+}
+
+/* Base resets & styles (inherited mostly from style.css, but adding specifics for dashboard layout) */
+body.dashboard-body {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Typography Helpers */
+.font-oswald {
+    font-family: 'Oswald', sans-serif;
+}
+
+.font-rajdhani {
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.font-bebas {
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.text-gold {
+    color: var(--gold);
+}
+
+.text-gray {
+    color: var(--text-muted);
+}
+
+.text-green {
+    color: var(--green-accent);
+}
+
+.text-red {
+    color: var(--red-accent);
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+    width: var(--sidebar-w);
+    background: var(--header-bg);
+    backdrop-filter: blur(20px);
+    border-right: 1px solid var(--border-subtle);
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    transition: transform 0.4s ease, left 0.4s ease, right 0.4s ease;
+}
+
+/* RTL Sidebar overrides */
+html[dir="rtl"] .sidebar {
+    left: auto;
+    right: 0;
+    border-right: none;
+    border-left: 1px solid rgba(201, 168, 76, 0.15);
+}
+
+.sidebar-header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+.sidebar-header .logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+}
+
+.sidebar-header .logo img {
+    height: 32px;
+}
+
+.sidebar-header .logo-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    color: var(--text-primary);
+    margin-top: 4px;
+}
+
+.sidebar-header .logo-text span {
+    color: var(--gold);
+}
+
+.sidebar-nav {
+    flex: 1;
+    padding: 24px 16px;
+    overflow-y: auto;
+}
+
+.nav-group-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin: 20px 0 8px 12px;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    transition: var(--transition);
+    margin-bottom: 4px;
+}
+
+.nav-item:hover {
+    background: var(--border-subtle);
+    color: var(--gold);
+}
+
+.nav-item.active {
+    background: linear-gradient(90deg, rgba(201, 168, 76, 0.1), transparent);
+    color: var(--accent-text);
+    border-left: 3px solid var(--gold);
+}
+
+html[dir="rtl"] .nav-item.active {
+    border-left: none;
+    border-right: 3px solid var(--gold);
+    background: linear-gradient(270deg, rgba(201, 168, 76, 0.1), transparent);
+}
+
+.nav-item .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+}
+
+.nav-item .icon svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.nav-item:hover .icon svg {
+    transform: scale(1.1);
+}
+
+.sidebar-footer {
+    padding: 10px 20px 25px;
+    border-top: 1px solid var(--border-subtle);
+    display: flex;
+    justify-content: center;
+}
+
+.lang-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.lang-toggle:hover {
+    background: #ffffff;
+    color: var(--bg-primary);
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);
+    transform: rotate(20deg) scale(1.1);
+}
+
+.lang-toggle .dir-label {
+    display: none;
+}
+
+/* --- MAIN CONTENT AREA --- */
+.main-content {
+    flex: 1;
+    margin-left: var(--sidebar-w);
+    padding: 32px 40px;
+    transition: margin 0.4s ease;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+html[dir="rtl"] .main-content {
+    margin-left: 0;
+    margin-right: var(--sidebar-w);
+}
+
+/* Topbar inside main content (mobile menu trigger + user profile summary) */
+.topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.page-title h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.page-title p {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin: 0;
+}
+
+.user-profile-menu {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: var(--bg-card);
+    padding: 6px 16px 6px 6px;
+    border-radius: 30px;
+    border: 1px solid var(--border-subtle);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.user-profile-menu:hover {
+    border-color: rgba(201, 168, 76, 0.5);
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    color: var(--bg-primary);
+    font-size: 16px;
+}
+
+.user-info .name {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+.user-info .tier {
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 1px;
+}
+
+/* --- DASHBOARD GRID --- */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 24px;
+}
+
+/* Cards */
+.dash-card {
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    padding: 24px;
+    border: 1px solid var(--border-subtle);
+    box-shadow: var(--shadow-card);
+    position: relative;
+    overflow: hidden;
+}
+
+.dash-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.5), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.dash-card:hover::before {
+    opacity: 1;
+}
+
+/* Stat Cards (row 1 typically) */
+.col-span-3 {
+    grid-column: span 3;
+}
+
+.col-span-4 {
+    grid-column: span 4;
+}
+
+.col-span-5 {
+    grid-column: span 5;
+}
+
+.col-span-6 {
+    grid-column: span 6;
+}
+
+.col-span-7 {
+    grid-column: span 7;
+}
+
+.col-span-8 {
+    grid-column: span 8;
+}
+
+.col-span-12 {
+    grid-column: span 12;
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.stat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.stat-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 13px;
+}
+
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background: rgba(201, 168, 76, 0.1);
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.stat-value {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 36px;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.stat-trend {
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.stat-trend.up {
+    color: var(--green-accent);
+}
+
+.stat-trend.down {
+    color: var(--red-accent);
+}
+
+/* specialized cards */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+/* Chart Container Placeholder */
+.chart-container {
+    height: 250px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    padding-top: 20px;
+}
+
+.bar-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+    height: 100%;
+}
+
+.bar {
+    width: 100%;
+    max-width: 40px;
+    background: linear-gradient(to top, rgba(201, 168, 76, 0.2), var(--gold));
+    border-radius: 4px 4px 0 0;
+    transition: height 1s ease-out;
+    position: relative;
+}
+
+.bar:hover {
+    filter: brightness(1.2);
+}
+
+.bar-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    font-family: 'Rajdhani', sans-serif;
+}
+
+/* Recent Orders Table */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.orders-table th {
+    text-align: left;
+    padding: 12px 16px;
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border-subtle);
+}
+
+html[dir="rtl"] .orders-table th {
+    text-align: right;
+}
+
+.orders-table td {
+    padding: 16px;
+    border-bottom: 1px solid var(--border-subtle);
+    font-size: 14px;
+}
+
+.orders-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.status-badge.delivered {
+    background: rgba(39, 174, 96, 0.15);
+    color: var(--green-accent);
+}
+
+.status-badge.processing {
+    background: rgba(201, 168, 76, 0.15);
+    color: var(--gold);
+}
+
+.status-badge.cancelled {
+    background: rgba(192, 57, 43, 0.15);
+    color: var(--red-accent);
+}
+
+/* User specific features */
+.loyalty-progress-container {
+    margin-top: 20px;
+}
+
+.progress-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 8px;
+    color: var(--text-muted);
+}
+
+.progress-bar-bg {
+    height: 8px;
+    background: var(--bg-tertiary);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold-dark), var(--bg-tertiary));
+    border-radius: 4px;
+}
+
+.points-detail {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 12px;
+    text-align: center;
+}
+
+/* ----------------------------- */
+/* DASHBOARD SPA VIEWS & FORMS */
+/* ----------------------------- */
+.dashboard-view {
+    display: none;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.dashboard-view.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Forms */
+.account-form {
+    width: 100%;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    color: var(--text-muted);
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.form-input {
+    background: var(--bg-input);
+    border: 1px solid var(--border-strong);
+    color: var(--text-primary);
+    padding: 12px 16px;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--gold);
+    background: var(--bg-secondary);
+}
+
+/* Specific Views Components */
+.orders-filter-tabs {
+    display: flex;
+    gap: 16px;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 2px;
+}
+
+.filter-tab {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 4px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.filter-tab:hover {
+    color: var(--text-primary);
+}
+
+.filter-tab.active {
+    color: var(--gold);
+}
+
+.filter-tab.active::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 1024px) {
+    .col-span-3 {
+        grid-column: span 6;
+    }
+
+    .col-span-4 {
+        grid-column: span 12;
+    }
+
+    .col-span-8 {
+        grid-column: span 12;
+    }
+}
+
+@media (max-width: 768px) {
+    body.dashboard-body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        transform: translateX(-100%);
+        z-index: 1000;
+    }
+
+    html[dir="rtl"] .sidebar {
+        transform: translateX(100%);
+    }
+
+    .sidebar.open {
+        transform: translateX(0) !important;
+    }
+
+    .sidebar-footer {
+        padding-top: 5px;
+        padding-bottom: 35px;
+        border-top: none;
+    }
+
+    .main-content {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 20px;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        margin-inline-end: 16px;
+        /* Adds space next to title for both LTR/RTL */
+        /* Remove high z-index so it naturally goes behind the sidebar (z-index 1000) when open */
+    }
+
+    .col-span-3,
+    .col-span-4,
+    .col-span-5,
+    .col-span-6,
+    .col-span-7,
+    .col-span-8 {
+        grid-column: span 12;
+    }
+
+    .topbar {
+        margin-bottom: 24px;
+        /* Context for stack order */
+    }
+
+    .page-title h1 {
+        font-size: 22px;
+    }
+}
