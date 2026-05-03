@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/dashboard.css" />
@@ -138,17 +138,10 @@
             <button class="theme-toggle" id="theme-toggle-sidebar" aria-label="Toggle Dark/Light Theme" title="Toggle Dark/Light Theme">
                 <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
                 <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-            </button>
-            <button class="lang-toggle globe-btn" id="lang-toggle" title="Toggle RTL/LTR">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <ellipse cx="12" cy="12" rx="4" ry="10" />
-                    <line x1="2" y1="9" x2="22" y2="9" />
-                    <line x1="2" y1="15" x2="22" y2="15" />
-                </svg>
+          </button>
+            <button class="lang-toggle globe-btn" id="globe-btn" title="Toggle RTL/LTR">
                 <span class="dir-label" id="dir-label">LTR</span>
-            </button>
+          </button>
         </div>
     </aside>
 
@@ -158,7 +151,9 @@
         <!-- TOPBAR -->
         <header class="topbar">
             <div style="display:flex; align-items:center; gap: 16px;">
-                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                </button>
                 <div class="page-title">
                     <h1 data-i18n="welcome_back">Welcome Back, Alex!</h1>
                     <p data-i18n="dashboard_subtitle">Here's what's happening with your account today.</p>
@@ -176,12 +171,15 @@
                     <div class="dash-card stat-card col-span-3">
                         <div class="stat-header">
                             <div class="stat-title" data-i18n="total_orders">Total Orders</div>
-                            <div class="stat-icon">📦</div>
+                            <div class="stat-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.27 6.96 8.73 5.05 8.73-5.05"/><path d="M12 22.08V12"/></svg>
+                            </div>
                         </div>
                         <div>
                             <div class="stat-value">24</div>
-                            <div class="stat-trend up">↑ 2 <span style="color:var(--gray); margin-left:4px;">this
-                                    month</span>
+                            <div class="stat-trend up">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                                2 <span style="color:var(--gray); margin-left:4px;">this month</span>
                             </div>
                         </div>
                     </div>
@@ -189,7 +187,9 @@
                     <div class="dash-card stat-card col-span-3">
                         <div class="stat-header">
                             <div class="stat-title" data-i18n="wishlist_items">Wishlist Items</div>
-                            <div class="stat-icon">❤️</div>
+                            <div class="stat-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+                            </div>
                         </div>
                         <div>
                             <div class="stat-value">12</div>
@@ -200,12 +200,16 @@
                     <div class="dash-card stat-card col-span-3">
                         <div class="stat-header">
                             <div class="stat-title" data-i18n="elite_points">Elite Points</div>
-                            <div class="stat-icon">💎</div>
+                            <div class="stat-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12l4 6-10 13L2 9Z"/><path d="M11 3 8 9l4 13 4-13-3-6"/><path d="M2 9h20"/></svg>
+                            </div>
                         </div>
                         <div>
                             <div class="stat-value text-gold">4,250</div>
-                            <div class="stat-trend up">↑ 450 <span style="color:var(--gray); margin-left:4px;">from last
-                                    order</span></div>
+                            <div class="stat-trend up">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                                450 <span style="color:var(--gray); margin-left:4px;">from last order</span>
+                            </div>
                         </div>
                     </div>
 
@@ -213,7 +217,9 @@
                         style="background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(160,120,48,0.05)); border-color: rgba(201,168,76,0.3);">
                         <div class="stat-header">
                             <div class="stat-title" style="color:var(--accent-text);" data-i18n="next_reward">Next Reward</div>
-                            <div class="stat-icon" style="background:var(--gold); color:var(--bg-primary);">🎁</div>
+                            <div class="stat-icon" style="background:var(--gold); color:var(--bg-primary);">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>
+                            </div>
                         </div>
                         <div>
                             <div class="stat-value font-oswald" style="font-size:24px; padding-top:10px;">$50 Voucher
@@ -268,7 +274,9 @@
                             <span class="status-badge processing">Gold Tier</span>
                         </div>
                         <div style="text-align:center; padding: 20px 0;">
-                            <div style="font-size:48px; line-height:1;">👑</div>
+                            <div style="font-size:48px; line-height:1; color:var(--gold);">
+                                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7Z"/><path d="M12 17H12"/></svg>
+                            </div>
                             <div class="font-bebas text-gold" style="font-size:28px; margin-top:10px;">GOLD MEMBER</div>
                         </div>
                         <div class="loyalty-progress-container">
@@ -298,15 +306,15 @@
                             <div style="display:flex; flex-direction:column; gap:16px;">
                                 <div style="display:flex; align-items:center; gap:8px;">
                                     <div style="width:12px; height:12px; background:var(--gold); border-radius:2px;">
-                                    </div><span class="text-white">Running (45%)</span>
+                                    </div><span class="text-primary">Running (45%)</span>
                                 </div>
                                 <div style="display:flex; align-items:center; gap:8px;">
                                     <div style="width:12px; height:12px; background:var(--red-accent); border-radius:2px;">
-                                    </div><span class="text-white">Training (30%)</span>
+                                    </div><span class="text-primary">Training (30%)</span>
                                 </div>
                                 <div style="display:flex; align-items:center; gap:8px;">
                                     <div style="width:12px; height:12px; background:var(--gray); border-radius:2px;">
-                                    </div><span class="text-white">Basketball (25%)</span>
+                                    </div><span class="text-primary">Basketball (25%)</span>
                                 </div>
                             </div>
                         </div>
@@ -404,7 +412,7 @@
                                         <td><span class="status-badge delivered" data-i18n="delivered">Delivered</span>
                                         </td>
                                         <td style="text-align:right;"><a href="#"
-                                                style="color:var(--gray); text-decoration:none;">View Details &rarr;</a>
+                                                style="color:var(--gray); text-decoration:none; display:inline-flex; align-items:center; gap:4px;">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -416,7 +424,7 @@
                                         <td><span class="status-badge delivered" data-i18n="delivered">Delivered</span>
                                         </td>
                                         <td style="text-align:right;"><a href="#"
-                                                style="color:var(--gray); text-decoration:none;">View Details &rarr;</a>
+                                                style="color:var(--gray); text-decoration:none; display:inline-flex; align-items:center; gap:4px;">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
                                         </td>
                                     </tr>
                                     <tr>
@@ -428,7 +436,7 @@
                                         <td><span class="status-badge cancelled" data-i18n="cancelled">Cancelled</span>
                                         </td>
                                         <td style="text-align:right;"><a href="#"
-                                                style="color:var(--gray); text-decoration:none;">View Details &rarr;</a>
+                                                style="color:var(--gray); text-decoration:none; display:inline-flex; align-items:center; gap:4px;">View Details <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
                                         </td>
                                     </tr>
                                 </tbody>
@@ -614,10 +622,10 @@
                                 to secure your account and earn 50 Elite Points.</p>
                             <div style="display:flex; gap:16px; margin-top:16px;">
                                 <div style="display:flex; align-items:center; gap:8px;"><span
-                                        style="color:var(--green-accent);">✓</span><span style="font-size:12px;">Email
+                                        style="color:var(--green-accent);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span style="font-size:12px;">Email
                                         Verified</span></div>
                                 <div style="display:flex; align-items:center; gap:8px;"><span
-                                        style="color:var(--green-accent);">✓</span><span style="font-size:12px;">Phone
+                                        style="color:var(--green-accent);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span style="font-size:12px;">Phone
                                         Added</span></div>
                                 <div style="display:flex; align-items:center; gap:8px; color:var(--gray);"><span
                                         style="border:1px solid var(--gray); border-radius:50%; width:14px; height:14px; display:inline-block;"></span><span
@@ -670,7 +678,9 @@
                                 <div style="font-weight:600; font-size:14px;">Windows PC · Chrome</div>
                                 <div style="font-size:12px; color:var(--green-accent);">Active Now</div>
                             </div>
-                            <div class="icon" style="font-size:20px;">💻</div>
+                            <div class="icon" style="font-size:20px; color:var(--text-muted);">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -680,7 +690,7 @@
             <div id="view-payment" class="dashboard-view">
                 <div class="dashboard-grid">
                     <div class="dash-card col-span-6"
-                        style="background: linear-gradient(135deg, #16203a, #0a0e1a); border: 2px solid var(--gold);">
+                        style="background: linear-gradient(135deg, var(--bg-card), var(--bg-primary)); border: 2px solid var(--gold);">
                         <div
                             style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:40px;">
                             <div style="font-style:italic; font-weight:700; font-size:24px;">VISA</div>
@@ -691,9 +701,9 @@
                             **** **** 4242</div>
                         <div
                             style="display:flex; justify-content:space-between; color:var(--gray); font-family:'Rajdhani'; text-transform:uppercase;">
-                            <div><span>Cardholder</span><br><strong style="color:white; font-size:16px;">Alex
+                            <div><span>Cardholder</span><br><strong style="color:var(--text-primary); font-size:16px;">Alex
                                     Carter</strong></div>
-                            <div><span>Expires</span><br><strong style="color:white; font-size:16px;">08/28</strong>
+                            <div><span>Expires</span><br><strong style="color:var(--text-primary); font-size:16px;">08/28</strong>
                             </div>
                         </div>
                     </div>
@@ -816,11 +826,11 @@
                             </div>
                             <div style="display:flex; justify-content:space-between; align-items:center;">
                                 <span class="text-gray" style="font-size:13px;">Domestic</span>
-                                <span class="font-bebas text-white" style="font-size:18px;">3-4 DAYS</span>
+                                <span class="font-bebas text-primary" style="font-size:18px;">3-4 DAYS</span>
                             </div>
                             <div style="display:flex; justify-content:space-between; align-items:center;">
                                 <span class="text-gray" style="font-size:13px;">International</span>
-                                <span class="font-bebas text-white" style="font-size:18px;">7-12 DAYS</span>
+                                <span class="font-bebas text-primary" style="font-size:18px;">7-12 DAYS</span>
                             </div>
                         </div>
                         <hr style="border-color:var(--border-subtle); margin:24px 0;">
@@ -860,20 +870,20 @@
                     <div class="dash-card col-span-12"
                         style="background: url('images/hero-banner.png') center/cover; position:relative;">
                         <div
-                            style="position:absolute; inset:0; background:linear-gradient(90deg, var(--navy-card) 40%, rgba(22,32,58,0.7));">
+                            style="position:absolute; inset:0; background:linear-gradient(90deg, var(--bg-card) 40%, rgba(201,168,76,0.1));">
                         </div>
                         <div
                             style="position:relative; z-index:1; padding:20px; display:flex; justify-content:space-between; align-items:center;">
                             <div>
-                                <h1 class="font-bebas text-gold" style="font-size:48px;">ELITE CLUB</h1>
+                                <h2 class="font-bebas text-gold" style="font-size:48px;">ELITE CLUB</h2>
                                 <p class="text-gray" style="max-width:400px;">Earn points on every purchase, unlock
                                     exclusive gear, and get early access to drops.</p>
                             </div>
                             <div style="text-align:right;">
-                                <div class="font-rajdhani text-white" style="font-weight:700; font-size:24px;">Current
+                                <div class="font-rajdhani text-primary" style="font-weight:700; font-size:24px;">Current
                                     Balance</div>
                                 <div class="font-bebas text-gold"
-                                    style="font-size:64px; line-height:1; text-shadow: 0 0 20px rgba(201,168,76,0.5);">
+                                    style="font-size:64px; line-height:1; text-shadow: 0 0 20px var(--gold-alpha-low);">
                                     4,250 <span style="font-size:24px;">PTS</span></div>
                             </div>
                         </div>
@@ -957,12 +967,14 @@
                         </form>
                     </div>
 
-                    <div class="dash-card col-span-5" style="background:var(--navy);">
+                     <div class="dash-card col-span-5" style="background:var(--bg-secondary);">
                         <h2 class="card-title" style="margin-bottom:24px;">Contact Options</h2>
 
                         <div
-                            style="display:flex; align-items:center; gap:16px; margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.05);">
-                            <div style="font-size:24px; color:var(--gold);">💬</div>
+                            style="display:flex; align-items:center; gap:16px; margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid var(--border-subtle);">
+                            <div style="color:var(--gold); display: flex; align-items: center; justify-content: center;">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            </div>
                             <div>
                                 <h3 class="font-rajdhani" style="font-weight:700; margin:0;">Live Chat</h3>
                                 <p class="text-gray" style="font-size:13px; margin:0;">Available 24/7</p>
@@ -972,18 +984,20 @@
                         </div>
 
                         <div
-                            style="display:flex; align-items:center; gap:16px; margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid rgba(255,255,255,0.05);">
-                            <div style="font-size:24px; color:var(--gold);">📞</div>
+                            style="display:flex; align-items:center; gap:16px; margin-bottom:24px; padding-bottom:24px; border-bottom:1px solid var(--border-subtle);">
+                            <div style="color:var(--gold); display: flex; align-items: center; justify-content: center;">
+                                <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            </div>
                             <div>
                                 <h3 class="font-rajdhani" style="font-weight:700; margin:0;">Phone Support</h3>
                                 <p class="text-gray" style="font-size:13px; margin:0;">Mon-Fri, 9am - 6pm EST</p>
                             </div>
-                            <a href="tel:18001234567" class="text-white font-bebas"
-                                style="margin-left:auto; font-size:20px; text-decoration:none;">1-800-ELITE</a>
+                             <a href="tel:18001234567" class="text-gold font-bebas"
+                                 style="margin-left:auto; font-size:20px; text-decoration:none;">1-800-ELITE</a>
                         </div>
                     </div>
                     <div class="dash-card col-span-12"
-                        style="background:linear-gradient(135deg, rgba(201,168,76,0.05), transparent);">
+                        style="background:linear-gradient(135deg, var(--gold-alpha-low), transparent);">
                         <h2 class="card-title">Frequently Asked Questions</h2>
                         <div style="display:flex; flex-direction:column; gap:16px; margin-top:24px;">
                             <div style="border-bottom:1px solid rgba(255,255,255,0.05); padding-bottom:16px;">
@@ -1013,22 +1027,8 @@
         </div> <!-- End Views Container -->
 
     </main>
-    </main>
 
     <script>
-        // Simple LTR/RTL Logic
-        const langToggle = document.getElementById('lang-toggle');
-        const htmlElem = document.documentElement;
-
-        // Check local storage or set default
-        let currentDir = localStorage.getItem('sportelite_dir') || 'ltr';
-        htmlElem.setAttribute('dir', currentDir);
-
-        langToggle.addEventListener('click', () => {
-            currentDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
-            htmlElem.setAttribute('dir', currentDir);
-            localStorage.setItem('sportelite_dir', currentDir);
-        });
 
         // Mobile Sidebar Toggle
         const mobileBtn = document.getElementById('mobile-menu-btn');
@@ -1093,7 +1093,7 @@
         // Close sidebar when clicking outside on mobile
         document.addEventListener('click', (e) => {
             if (window.innerWidth <= 768) {
-                if (!sidebar.contains(e.target) && e.target !== mobileBtn) {
+                if (!sidebar.contains(e.target) && !mobileBtn.contains(e.target)) {
                     sidebar.classList.remove('open');
                 }
             }

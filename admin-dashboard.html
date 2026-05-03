@@ -8,7 +8,7 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/dashboard.css" />
@@ -126,16 +126,10 @@
             <button class="theme-toggle" id="theme-toggle-sidebar" aria-label="Toggle Dark/Light Theme" title="Toggle Dark/Light Theme">
                 <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
                 <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-            </button>
-            <button class="lang-toggle globe-btn" id="lang-toggle" title="Toggle RTL/LTR">
-                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
-                    stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10" />
-                    <ellipse cx="12" cy="12" rx="4" ry="10" />
-                    <line x1="2" y1="9" x2="22" y2="9" />
-                    <line x1="2" y1="15" x2="22" y2="15" />
-                </svg>
-            </button>
+          </button>
+            <button class="lang-toggle globe-btn" id="globe-btn" title="Toggle RTL/LTR">
+                <span class="dir-label" id="dir-label">LTR</span>
+          </button>
         </div>
     </aside>
 
@@ -145,7 +139,9 @@
         <!-- TOPBAR -->
         <header class="topbar">
             <div style="display:flex; align-items:center; gap: 16px;">
-                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+                <button class="mobile-menu-btn" id="mobile-menu-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                </button>
                 <div class="page-title">
                     <h1 id="main-title">Admin Command Center</h1>
                     <p id="main-subtitle">Daily business operations and system metrics.</p>
@@ -157,7 +153,7 @@
                     <div style="font-size:12px; color:var(--green-accent);">System Online</div>
                 </div>
                 <div
-                    style="width:40px; height:40px; border-radius:50%; background:var(--gold); display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--bg-primary);">
+                    style="width:40px; height:40px; border-radius:50%; background:var(--gold); display:flex; align-items:center; justify-content:center; font-weight:700; color:var(--bg-card);">
                     AD</div>
             </div>
         </header>
@@ -172,29 +168,39 @@
                     <div class="dash-card stat-card col-span-3">
                         <div class="stat-header">
                             <div class="stat-title">Total Revenue</div>
-                            <div class="stat-icon" style="background:rgba(46,204,113,0.1); color:#2ecc71;">$</div>
+                             <div class="stat-icon" style="background:rgba(46,204,113,0.1); color:#2ecc71;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="2" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                             </div>
                         </div>
                         <div>
                             <div class="stat-value">$128,450</div>
-                            <div class="stat-trend up">↑ 12% <span style="color:var(--gray); margin-left:4px;">vs last
-                                    month</span></div>
+                            <div class="stat-trend up">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                                12% <span style="color:var(--gray); margin-left:4px;">vs last month</span>
+                            </div>
                         </div>
                     </div>
                     <div class="dash-card stat-card col-span-3">
                         <div class="stat-header">
                             <div class="stat-title">New Customers</div>
-                            <div class="stat-icon" style="background:rgba(52,152,219,0.1); color:#3498db;">👥</div>
+                            <div class="stat-icon" style="background:rgba(52,152,219,0.1); color:#3498db;">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </div>
                         </div>
                         <div>
                             <div class="stat-value">1,240</div>
-                            <div class="stat-trend up">↑ 8% <span style="color:var(--gray); margin-left:4px;">vs last
-                                    month</span></div>
+                            <div class="stat-trend up">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="margin-right:4px;"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                                8% <span style="color:var(--gray); margin-left:4px;">vs last month</span>
+                            </div>
                         </div>
                     </div>
                     <div class="dash-card stat-card col-span-3">
                         <div class="stat-header">
                             <div class="stat-title">Active Orders</div>
-                            <div class="stat-icon" style="background:rgba(201,168,76,0.1); color:var(--gold);">📦</div>
+                            <div class="stat-icon" style="background:rgba(201,168,76,0.1); color:var(--gold);">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.27 6.96 8.73 5.05 8.73-5.05"/><path d="M12 22.08V12"/></svg>
+                            </div>
                         </div>
                         <div>
                             <div class="stat-value">84</div>
@@ -204,7 +210,9 @@
                     <div class="dash-card stat-card col-span-3">
                         <div class="stat-header">
                             <div class="stat-title">Store Rating</div>
-                            <div class="stat-icon" style="background:rgba(241,196,15,0.1); color:#f1c40f;">★</div>
+                            <div class="stat-icon" style="background:rgba(241,196,15,0.1); color:#f1c40f;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                            </div>
                         </div>
                         <div>
                             <div class="stat-value">4.8/5</div>
@@ -223,7 +231,7 @@
                                 </div>
                                 <div style="display:flex; align-items:center; gap:6px; font-size:12px;">
                                     <div
-                                        style="width:10px; height:2px; background:rgba(255,255,255,0.2); border-radius:1px;">
+                                        style="width:10px; height:2px; background:var(--text-muted); border-radius:1px;">
                                     </div> Forecast
                                 </div>
                             </div>
@@ -412,7 +420,9 @@
                                 <input type="text" placeholder="Search customers..."
                                     style="background:var(--bg-input); border:1px solid var(--border-strong); padding:6px 12px 6px 32px; border-radius:4px; color:var(--text-primary); font-size:13px; font-family:'Rajdhani';">
                                 <span
-                                    style="position:absolute; left:10px; top:50%; transform:translateY(-50%); opacity:0.5;">🔍</span>
+                                    style="position:absolute; left:10px; top:50%; transform:translateY(-50%); opacity:0.5; color:var(--text-primary);">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+                                </span>
                             </div>
                         </div>
                         <div class="table-responsive" style="margin-top:24px;">
@@ -479,7 +489,7 @@
                                 <div>
                                     <div
                                         style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:13px;">
-                                        <span class="text-white">North America</span>
+                                        <span class="text-primary">North America</span>
                                         <span class="text-gold">65%</span>
                                     </div>
                                     <div
@@ -490,7 +500,7 @@
                                 <div>
                                     <div
                                         style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:13px;">
-                                        <span class="text-white">Europe</span>
+                                        <span class="text-primary">Europe</span>
                                         <span class="text-gold">20%</span>
                                     </div>
                                     <div
@@ -501,7 +511,7 @@
                                 <div>
                                     <div
                                         style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:13px;">
-                                        <span class="text-white">Asia Pacific</span>
+                                        <span class="text-primary">Asia Pacific</span>
                                         <span class="text-gold">10%</span>
                                     </div>
                                     <div
@@ -512,7 +522,7 @@
                                 <div>
                                     <div
                                         style="display:flex; justify-content:space-between; margin-bottom:8px; font-size:13px;">
-                                        <span class="text-white">Other</span>
+                                        <span class="text-primary">Other</span>
                                         <span class="text-gold">5%</span>
                                     </div>
                                     <div
@@ -579,7 +589,7 @@
                             style="display:flex; flex-direction:column; justify-content:center; height:250px; gap:30px; padding:0 20px;">
                             <div>
                                 <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
-                                    <span class="text-white font-rajdhani">Cart Add Rate</span>
+                                    <span class="text-primary font-rajdhani">Cart Add Rate</span>
                                     <span class="text-gold font-bebas" style="font-size:18px;">18.4%</span>
                                 </div>
                                 <div
@@ -591,7 +601,7 @@
                             </div>
                             <div>
                                 <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
-                                    <span class="text-white font-rajdhani">Checkout Start</span>
+                                    <span class="text-primary font-rajdhani">Checkout Start</span>
                                     <span class="text-gold font-bebas" style="font-size:18px;">12.1%</span>
                                 </div>
                                 <div
@@ -601,7 +611,7 @@
                             </div>
                             <div>
                                 <div style="display:flex; justify-content:space-between; margin-bottom:12px;">
-                                    <span class="text-white font-rajdhani">Purchase Rate</span>
+                                    <span class="text-primary font-rajdhani">Purchase Rate</span>
                                     <span class="text-gold font-bebas" style="font-size:18px;">3.2%</span>
                                 </div>
                                 <div
@@ -721,18 +731,6 @@
     </main>
 
     <script>
-        // Simple LTR/RTL Logic
-        const langToggle = document.getElementById('lang-toggle');
-        const htmlElem = document.documentElement;
-
-        let currentDir = localStorage.getItem('sportelite_admin_dir') || 'ltr';
-        htmlElem.setAttribute('dir', currentDir);
-
-        langToggle.addEventListener('click', () => {
-            currentDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
-            htmlElem.setAttribute('dir', currentDir);
-            localStorage.setItem('sportelite_admin_dir', currentDir);
-        });
 
         // Mobile Sidebar Toggle
         const mobileBtn = document.getElementById('mobile-menu-btn');
@@ -794,7 +792,7 @@
         // Close sidebar when clicking outside on mobile
         document.addEventListener('click', (e) => {
             if (window.innerWidth <= 768) {
-                if (!sidebar.contains(e.target) && e.target !== mobileBtn) {
+                if (!sidebar.contains(e.target) && !mobileBtn.contains(e.target)) {
                     sidebar.classList.remove('open');
                 }
             }

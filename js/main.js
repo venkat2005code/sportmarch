@@ -476,7 +476,7 @@
     const input = qs('#newsletter-email');
     const btn = qs('#newsletter-submit');
     if (!input || !input.value.includes('@')) return;
-    btn.textContent = '✓ Subscribed!';
+    btn.textContent = 'Subscribed!';
     btn.style.background = '#27ae60';
     setTimeout(() => {
       btn.textContent = 'Subscribe';
