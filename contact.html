@@ -87,6 +87,16 @@
         <div class="mobile-nav-item" style="border-bottom: none;">
             <a href="login.html" class="mobile-login-btn">Login</a>
         </div>
+
+        <div class="mobile-nav-controls">
+            <button class="theme-toggle" aria-label="Toggle Dark/Light Theme" title="Toggle Dark/Light Theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+            </button>
+            <button class="globe-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR">
+                <span class="dir-label">LTR</span>
+            </button>
+        </div>
     </nav>
 
     <main>
@@ -103,67 +113,60 @@
             </div>
         </section>
 
-        <!-- 2. Global Headquarters -->
-        <section class="contact-hq" id="hq">
-            <div class="hq-map-bg">
-                <img src="images/world-map.jpg" alt="World Map" class="hq-img" />
-            </div>
-            <div class="container hq-overlay-container">
-                <div class="hq-card reveal from-left">
-                    <h2 class="section-title">Global <span>Command</span> Center</h2>
-                    <div class="hq-info">
-                        <div class="hq-item">
-                            <span class="label">Primary HQ</span>
-                            <p>123 Champion Avenue, Sports City, CA 90210</p>
-                        </div>
-                        <div class="hq-item">
-                            <span class="label">Operating Hours</span>
-                            <p>24/7 Elite Support</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 3. Department Grid -->
-        <section class="contact-departments" id="departments">
+        <!-- 2. Split Info & Contact Form -->
+        <section class="contact-split-section" id="support">
             <div class="container">
-                <div class="dept-grid">
-                    <div class="dept-box reveal" style="background-image: url('images/gallery.png');">
-                        <div class="dept-content">
-                            <h3>Performance <span>Sales</span></h3>
-                            <p>sales@sportelite.com</p>
+                <div class="contact-split-grid">
+                    <div class="contact-info-panel reveal from-left">
+                        <h2 class="section-title">Global <span>Command</span> Center</h2>
+                        <div class="info-cards-container">
+                            <div class="info-card">
+                                <div class="card-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                                </div>
+                                <div class="card-text">
+                                    <h4>Primary Headquarters</h4>
+                                    <p>123 Champion Avenue, Sports City, CA 90210</p>
+                                </div>
+                            </div>
+                            <div class="info-card">
+                                <div class="card-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                </div>
+                                <div class="card-text">
+                                    <h4>Hotline & support</h4>
+                                    <p>+1 (800) 555-SPORT (24/7 Support)</p>
+                                </div>
+                            </div>
+                            <div class="info-card">
+                                <div class="card-icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                </div>
+                                <div class="card-text">
+                                    <h4>Operating Hours</h4>
+                                    <p>Monday - Sunday: 24 Hours</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="departments-list-panel">
+                            <h3>Elite Departments</h3>
+                            <div class="dept-list-item">
+                                <span>Performance Sales</span>
+                                <a href="mailto:sales@sportelite.com">sales@sportelite.com</a>
+                            </div>
+                            <div class="dept-list-item">
+                                <span>Elite Coaching</span>
+                                <a href="mailto:coaching@sportelite.com">coaching@sportelite.com</a>
+                            </div>
+                            <div class="dept-list-item">
+                                <span>Tech Support</span>
+                                <a href="mailto:tech@sportelite.com">tech@sportelite.com</a>
+                            </div>
                         </div>
                     </div>
-                    <div class="dept-box reveal reveal-delay-1" style="background-image: url('images/team.png');">
-                        <div class="dept-content">
-                            <h3>Elite <span>Coaching</span></h3>
-                            <p>coaching@sportelite.com</p>
-                        </div>
-                    </div>
-                    <div class="dept-box reveal reveal-delay-2"
-                        style="background-image: url('images/hero-banner.png');">
-                        <div class="dept-content">
-                            <h3>Tech <span>Support</span></h3>
-                            <p>tech@sportelite.com</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 5. Support Lab (Form) -->
-        <section class="contact-support-lab" id="support">
-            <div class="lab-bg-texture"></div>
-            <div class="container">
-                <div class="lab-flex-grid">
-                    <div class="lab-visual reveal from-left">
-                        <div class="lab-stats-box">
-                            <span class="stat-num">24/7</span>
-                            <span class="stat-label">Support Monitoring</span>
-                        </div>
-                    </div>
-                    <div class="lab-form-container reveal from-right">
+                    
+                    <div class="contact-form-panel reveal from-right">
                         <h2 class="section-title">Initiate <span>Contact</span></h2>
                         <div id="contact-form" class="elite-form">
                             <div class="form-row">
@@ -178,15 +181,13 @@
             </div>
         </section>
 
-        <!-- 9. FAQ Kinetic -->
+        <!-- 3. FAQ Kinetic -->
         <section class="contact-faq" id="faq">
             <div class="faq-bg-pattern"></div>
             <div class="container">
                 <div class="faq-layout">
                     <div class="faq-visual reveal from-right">
-                        <div class="faq-icon-sphere">
-                            <div class="sphere-inner">?</div>
-                        </div>
+                        <img src="images/sports-contact-faq.png" class="faq-visual-img" alt="FAQ Visual Support" />
                     </div>
                     <div class="faq-content reveal from-left">
                         <h2 class="section-title">Elite <span>Intelligence</span></h2>
@@ -200,18 +201,6 @@
                                 international clients.</div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 10. Connection CTA -->
-        <section class="contact-cta" id="final-cta">
-            <div class="cta-bg-kinetic" style="background-image: url('images/hero-banner.png');"></div>
-            <div class="container cta-flex">
-                <div class="reveal from-bottom">
-                    <h2 class="cta-title">Ready for <span>Legendary</span>?</h2>
-                    <p>The first step to greatness is the easiest one to take.</p>
-                    <a href="#support" class="btn-primary-large">Initiate Now</a>
                 </div>
             </div>
         </section>

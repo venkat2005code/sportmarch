@@ -85,6 +85,16 @@
         <div class="mobile-nav-item" style="border-bottom: none;">
             <a href="login.html" class="mobile-login-btn">Login</a>
         </div>
+
+        <div class="mobile-nav-controls">
+            <button class="theme-toggle" aria-label="Toggle Dark/Light Theme" title="Toggle Dark/Light Theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+            </button>
+            <button class="globe-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR">
+                <span class="dir-label">LTR</span>
+            </button>
+        </div>
     </nav>
 
     <main>
@@ -209,17 +219,120 @@
                         <div class="vital-card">
                             <span class="v-label">V02 Max</span>
                             <span class="v-value">68.4</span>
+                            <span class="v-unit">ml/kg/min</span>
                         </div>
                         <div class="vital-card">
                             <span class="v-label">Stamina Index</span>
                             <span class="v-value">92%</span>
+                            <span class="v-unit">Index Score</span>
+                        </div>
+                        <div class="vital-card">
+                            <span class="v-label">Heart Rate</span>
+                            <span class="v-value">142</span>
+                            <span class="v-unit">bpm Peak</span>
+                        </div>
+                        <div class="vital-card">
+                            <span class="v-label">Recovery Score</span>
+                            <span class="v-value">88%</span>
+                            <span class="v-unit">Optimized</span>
                         </div>
                     </div>
-                    <div class="chart-mockup">
-                        <div class="bar reveal-expand" style="height: 60%"></div>
-                        <div class="bar reveal-expand" style="height: 80%"></div>
-                        <div class="bar reveal-expand" style="height: 40%"></div>
-                        <div class="bar reveal-expand" style="height: 90%"></div>
+                    <div class="analytics-chart-container">
+                        <div class="chart-main">
+                            <div class="chart-y-axis">
+                                <span>100</span>
+                                <span>75</span>
+                                <span>50</span>
+                                <span>25</span>
+                                <span>0</span>
+                            </div>
+                            <div class="chart-grid-area">
+                                <div class="chart-grid-lines">
+                                    <div class="chart-grid-line"></div>
+                                    <div class="chart-grid-line"></div>
+                                    <div class="chart-grid-line"></div>
+                                    <div class="chart-grid-line"></div>
+                                    <div class="chart-grid-line"></div>
+                                </div>
+                                <div class="chart-bars">
+                                    <div class="chart-bar-wrapper">
+                                        <div class="bar reveal-expand" style="height: 68%" data-value="68"></div>
+                                    </div>
+                                    <div class="chart-bar-wrapper">
+                                        <div class="bar reveal-expand" style="height: 92%" data-value="92"></div>
+                                    </div>
+                                    <div class="chart-bar-wrapper">
+                                        <div class="bar reveal-expand" style="height: 75%" data-value="75"></div>
+                                    </div>
+                                    <div class="chart-bar-wrapper">
+                                        <div class="bar reveal-expand" style="height: 88%" data-value="88"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: flex;">
+                            <div style="width: 25px;"></div>
+                            <div style="flex-grow: 1;" class="chart-x-axis">
+                                <span class="chart-x-label">VO2 Max</span>
+                                <span class="chart-x-label">Stamina</span>
+                                <span class="chart-x-label">Heart Rate</span>
+                                <span class="chart-x-label">Recovery</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 11. Corporate Hub -->
+        <section class="services-corporate" id="corporate">
+            <div class="container">
+                <div class="corp-box reveal">
+                    <div class="section-header center">
+                        <span class="section-tag">Corporate Hub</span>
+                        <h2 class="section-title">Official <span>Partners</span></h2>
+                        <div class="gold-line"></div>
+                        <p style="color:var(--gray); max-width:600px; margin:20px auto 0;">We partner with the world's leading sports brands to supply premium, high-performance equipment to athletic institutions worldwide.</p>
+                    </div>
+                    <div class="corp-logos">
+                        <div class="corp-logo nike" title="Nike">Nike</div>
+                        <div class="corp-logo adidas" title="Adidas">Adidas</div>
+                        <div class="corp-logo puma" title="Puma">Puma</div>
+                        <div class="corp-logo under-armour" title="Under Armour">Under Armour</div>
+                        <div class="corp-logo reebok" title="Reebok">Reebok</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 12. Youth Academy -->
+        <section class="services-youth" id="youth">
+            <div class="motion-bg"></div>
+            <div class="container">
+                <div class="youth-split">
+                    <div class="youth-content reveal">
+                        <span class="section-tag">Next Generation</span>
+                        <h2 class="section-title">Youth Sports <span>Academy</span></h2>
+                        <div class="gold-line" style="margin-left: 0;"></div>
+                        <p style="color:var(--gray); margin:24px 0; line-height: 1.8;">Nurturing tomorrow's champions today. Our youth development program offers access to professional coaching, tailored training regimes, and elite-level equipment designed specifically for junior athletes.</p>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 40px; display: flex; flex-direction: column; gap: 16px;">
+                            <li style="display:flex; align-items:center; gap:12px; color:var(--text-primary);">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                                Junior Athletic Development Plans
+                            </li>
+                            <li style="display:flex; align-items:center; gap:12px; color:var(--text-primary);">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                                Pro-Grade Youth Gear Supply
+                            </li>
+                            <li style="display:flex; align-items:center; gap:12px; color:var(--text-primary);">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                                Scholarship & Academy Access Paths
+                            </li>
+                        </ul>
+                        <a href="contact.html" class="btn-primary">Apply for Academy</a>
+                    </div>
+                    <div class="youth-visual reveal reveal-delay-1">
+                        <img src="images/sports-team-pro.png" class="side-img" alt="Youth Sports Academy Training" />
                     </div>
                 </div>
             </div>

@@ -303,6 +303,67 @@ html[dir="rtl"] .main-content {
     letter-spacing: 1px;
 }
 
+/* --- TOPBAR CONTROLS & TOGGLES --- */
+.topbar-controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-left: auto;
+}
+
+html[dir="rtl"] .topbar-controls {
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.topbar-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-card);
+    border: 1px solid var(--border-subtle);
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.topbar-btn:hover {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    box-shadow: 0 4px 15px rgba(201, 168, 76, 0.15);
+    transform: translateY(-2px);
+}
+
+.topbar-btn svg {
+    position: absolute;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s;
+}
+
+.topbar-btn .sun-icon {
+    opacity: 0;
+    transform: translateY(20px) rotate(90deg);
+}
+
+.topbar-btn .moon-icon {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+}
+
+html.light-theme .topbar-btn .sun-icon {
+    opacity: 1;
+    transform: translateY(0) rotate(0);
+}
+
+html.light-theme .topbar-btn .moon-icon {
+    opacity: 0;
+    transform: translateY(-20px) rotate(-90deg);
+}
+
 /* --- DASHBOARD GRID --- */
 .dashboard-grid {
     display: grid;

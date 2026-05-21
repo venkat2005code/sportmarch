@@ -174,8 +174,12 @@
         .h2-hscroll-wrap {
             overflow-x: auto;
             padding-bottom: 20px;
-            scrollbar-width: thin;
-            scrollbar-color: var(--gold) transparent;
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+
+        .h2-hscroll-wrap::-webkit-scrollbar {
+            display: none; /* Chrome, Safari and Opera */
         }
 
         .h2-hscroll-track {
@@ -688,19 +692,82 @@
         /* ── NEW SECTIONS: 5. Product Spotlight ── */
         .h2-spotlight {
             position: relative;
-            text-align: center;
             padding: 80px 0;
         }
 
+        .h2-spotlight-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        @media (min-width: 992px) {
+            .h2-spotlight-grid {
+                grid-template-columns: 1.2fr 1fr;
+                gap: 60px;
+                text-align: left;
+            }
+        }
+
         .h2-spotlight-img {
-            max-width: 800px;
-            margin: 0 auto;
+            width: 100%;
             position: relative;
         }
 
         .h2-spotlight-img img {
             width: 100%;
             display: block;
+        }
+
+        .h2-spec-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            text-align: left;
+        }
+
+        .h2-spec-card {
+            background: var(--navy-card);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: var(--radius);
+            padding: 24px;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            transition: var(--transition);
+        }
+
+        .h2-spec-card:hover {
+            border-color: rgba(201, 168, 76, 0.3);
+            transform: translateX(5px);
+        }
+
+        [dir="rtl"] .h2-spec-card:hover {
+            transform: translateX(-5px);
+        }
+
+        .h2-spec-num {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            line-height: 1;
+        }
+
+        .h2-spec-info h4 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+
+        .h2-spec-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin: 0;
         }
 
         .h2-hotspot {
@@ -1089,6 +1156,16 @@
         <div class="mobile-nav-item" style="border-bottom: none;">
             <a href="login.html" class="mobile-login-btn">Login</a>
         </div>
+
+        <div class="mobile-nav-controls">
+            <button class="theme-toggle" aria-label="Toggle Dark/Light Theme" title="Toggle Dark/Light Theme">
+                <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5" /><line x1="12" y1="1" x2="12" y2="3" /><line x1="12" y1="21" x2="12" y2="23" /><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" /><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" /><line x1="1" y1="12" x2="3" y2="12" /><line x1="21" y1="12" x2="23" y2="12" /><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" /><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" /></svg>
+                <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" /></svg>
+            </button>
+            <button class="globe-btn" aria-label="Toggle RTL/LTR direction" title="Toggle RTL/LTR">
+                <span class="dir-label">LTR</span>
+            </button>
+        </div>
     </nav>
 
     <!-- ══ SECTION 1 — SPLIT HERO ══ -->
@@ -1116,7 +1193,7 @@
             </div>
         </div>
         <div class="h2-hero-right">
-            <img src="images/hero-banner.png" alt="Hero sports gear" />
+            <img src="images/sports-hero-bg.png" alt="Hero sports gear" />
         </div>
     </section>
 
@@ -1257,35 +1334,62 @@
                 <span class="section-tag">Anatomy Of Greatness</span>
                 <h2 class="section-title">The <span>VaporFLY</span> Elite</h2>
                 <div class="gold-line"></div>
-                <p style="color:var(--gray); max-width:600px; margin:20px auto 0;">Hover over the markers to explore the
-                    cutting-edge technology engineered into our flagship running shoe.</p>
+                <p style="color:var(--gray); max-width:600px; margin:20px auto 0;">Hover over the markers or read the technical specifications below to explore the elite features of our flagship running shoe.</p>
             </div>
 
-            <div class="h2-spotlight-img reveal">
-                <img src="images/products-showcase.png" alt="VaporFLY Elite" loading="lazy" />
+            <div class="h2-spotlight-grid">
+                <div class="h2-spotlight-left">
+                    <div class="h2-spotlight-img reveal">
+                        <img src="images/products-showcase.png" alt="VaporFLY Elite" loading="lazy" />
 
-                <!-- Hotspot 1 -->
-                <div class="h2-hotspot" style="top: 30%; left: 20%;">
-                    <div class="h2-hotspot-tooltip">
-                        <h5>AeroMesh Upper</h5>
-                        <p>Ultra-breathable woven material stretches to fit while keeping weight to an absolute minimum.
-                        </p>
+                        <!-- Hotspot 1 -->
+                        <div class="h2-hotspot" style="top: 30%; left: 20%;">
+                            <div class="h2-hotspot-tooltip">
+                                <h5>AeroMesh Upper</h5>
+                                <p>Ultra-breathable woven material stretches to fit while keeping weight to an absolute minimum.</p>
+                            </div>
+                        </div>
+
+                        <!-- Hotspot 2 -->
+                        <div class="h2-hotspot" style="top: 70%; left: 45%;">
+                            <div class="h2-hotspot-tooltip">
+                                <h5>Carbon Fiber Plate</h5>
+                                <p>Full-length internal carbon plate delivers maximum energy return and propels you forward.</p>
+                            </div>
+                        </div>
+
+                        <!-- Hotspot 3 -->
+                        <div class="h2-hotspot" style="top: 85%; left: 80%;">
+                            <div class="h2-hotspot-tooltip">
+                                <h5>CloudFoam Heel</h5>
+                                <p>Targeted impact absorption protects joints during high-mileage runs on hard surfaces.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Hotspot 2 -->
-                <div class="h2-hotspot" style="top: 70%; left: 45%;">
-                    <div class="h2-hotspot-tooltip">
-                        <h5>Carbon Fiber Plate</h5>
-                        <p>Full-length internal carbon plate delivers maximum energy return and propels you forward.</p>
-                    </div>
-                </div>
-
-                <!-- Hotspot 3 -->
-                <div class="h2-hotspot" style="top: 85%; left: 80%;">
-                    <div class="h2-hotspot-tooltip">
-                        <h5>CloudFoam Heel</h5>
-                        <p>Targeted impact absorption protects joints during high-mileage runs on hard surfaces.</p>
+                <div class="h2-spotlight-right reveal reveal-delay-1">
+                    <div class="h2-spec-list">
+                        <div class="h2-spec-card">
+                            <span class="h2-spec-num">01</span>
+                            <div class="h2-spec-info">
+                                <h4>AeroMesh Upper</h4>
+                                <p>Ultra-breathable woven material stretches to fit while keeping weight to an absolute minimum. Offers seamless comfort and prevents chafing during long distance runs.</p>
+                            </div>
+                        </div>
+                        <div class="h2-spec-card">
+                            <span class="h2-spec-num">02</span>
+                            <div class="h2-spec-info">
+                                <h4>Carbon Fiber Plate</h4>
+                                <p>Full-length internal carbon plate delivers maximum energy return and propels you forward with every stride. Optimizes gait efficiency and reduces fatigue.</p>
+                            </div>
+                        </div>
+                        <div class="h2-spec-card">
+                            <span class="h2-spec-num">03</span>
+                            <div class="h2-spec-info">
+                                <h4>CloudFoam Heel</h4>
+                                <p>Targeted impact absorption protects joints during high-mileage runs on hard surfaces. Provides plush heel cushioning for smoother heel-to-toe transitions.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

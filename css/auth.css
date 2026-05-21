@@ -259,6 +259,24 @@ html:not(.light-theme) .btn-auth {
     background: rgba(24, 119, 242, 0.08);
 }
 
+.btn-social.apple {
+    border-color: #000000;
+    color: #000000;
+}
+
+.btn-social.apple:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+html:not(.light-theme) .btn-social.apple {
+    border-color: #ffffff;
+    color: #ffffff;
+}
+
+html:not(.light-theme) .btn-social.apple:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
 .social-icon {
     width: 18px;
     height: 18px;

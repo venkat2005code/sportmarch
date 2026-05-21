@@ -15,30 +15,30 @@
      1.  RTL / LTR  GLOBE TOGGLE
   ══════════════════════════════════════════ */
   const html = document.documentElement;
-  const globeBtn = qs('#globe-btn');
-  const dirLabel = qs('#dir-label');
+  const globeButtons = qsa('.lang-toggle, .globe-btn');
 
   let isRTL = localStorage.getItem('dir') === 'rtl';
 
   function applyDir(rtl) {
     isRTL = rtl;
     html.setAttribute('dir', rtl ? 'rtl' : 'ltr');
-    if (dirLabel) dirLabel.textContent = rtl ? 'RTL' : 'LTR';
+    qsa('.dir-label').forEach(label => {
+      label.textContent = rtl ? 'RTL' : 'LTR';
+    });
     localStorage.setItem('dir', rtl ? 'rtl' : 'ltr');
   }
 
   applyDir(isRTL);
 
-  if (globeBtn) {
-    globeBtn.addEventListener('click', () => applyDir(!isRTL));
-    globeBtn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') applyDir(!isRTL); });
-  }
+  globeButtons.forEach(btn => {
+    btn.addEventListener('click', () => applyDir(!isRTL));
+    btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') applyDir(!isRTL); });
+  });
 
   /* ══════════════════════════════════════════
      1.5. THEME TOGGLE (DARK / LIGHT)
   ══════════════════════════════════════════ */
-  const themeToggle = qs('#theme-toggle');
-  const themeToggleSidebar = qs('#theme-toggle-sidebar'); // for dashboards
+  const themeToggles = qsa('.theme-toggle');
 
   function applyTheme(theme) {
     if (theme === 'light') {
@@ -54,18 +54,26 @@
     applyTheme(isLight ? 'dark' : 'light');
   }
 
-  if (themeToggle) {
-    themeToggle.addEventListener('click', toggleTheme);
-  }
-  if (themeToggleSidebar) {
-    themeToggleSidebar.addEventListener('click', toggleTheme);
-  }
+  themeToggles.forEach(toggle => {
+    toggle.addEventListener('click', toggleTheme);
+  });
 
   // Sync theme across tabs
   window.addEventListener('storage', (e) => {
     if (e.key === 'theme') applyTheme(e.newValue);
     if (e.key === 'dir') applyDir(e.newValue === 'rtl');
   });
+
+  // 1.8. TOPBAR USER PROFILE NAVIGATION REDIRECT
+  const userProfileTrigger = qs('#topbar-profile-trigger');
+  if (userProfileTrigger) {
+    userProfileTrigger.addEventListener('click', () => {
+      const settingsNav = qs('.sidebar-nav .nav-item[data-target="view-profile"], .sidebar-nav .nav-item[data-target="admin-settings"]');
+      if (settingsNav) {
+        settingsNav.click();
+      }
+    });
+  }
 
   /* ══════════════════════════════════════════
      2.  HEADER SCROLL BEHAVIOUR
